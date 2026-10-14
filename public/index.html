@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ProspectScan: website audits that write the outreach for you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="radar"></span>ProspectScan</div>
+  <span class="tag" id="writer"></span>
+  <div class="grow"></div>
+  <a class="btn" id="export" hidden>Export CSV</a>
+</header>
+
+<main class="layout">
+  <form class="panel" id="form">
+    <h1>Find businesses that need you</h1>
+    <p class="lead">Paste websites. ProspectScan audits each one for speed, mobile, SEO and missing booking or chat, scores the opportunity, and drafts a specific email.</p>
+    <label>Websites <small>one per line, up to 50</small>
+      <textarea id="urls" rows="7" placeholder="oakridgeplumbing.com&#10;harboryoga.com" required></textarea></label>
+    <div class="two">
+      <label>Your name<input id="sender" required placeholder="Ahmad Murtaza"></label>
+      <label>Company (optional)<input id="company" placeholder="Orbix Solutions"></label>
+    </div>
+    <label>What you offer <small>one sentence</small>
+      <input id="offer" required minlength="5" placeholder="I add online booking and an AI receptionist to small-business sites"></label>
+    <button class="btn primary" id="go">Scan websites</button>
+    <p class="fine">Respects robots.txt, identifies itself as ProspectScanBot, and paces its requests. Drafts include an opt-out line. Review every email before sending.</p>
+  </form>
+
+  <section class="results">
+    <div class="progress" id="progress" hidden><div class="bar"><i id="bar"></i></div><span id="ptext"></span></div>
+    <div class="summary" id="summary" hidden></div>
+    <div id="list"><div class="placeholder">
+      <div class="ring big"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9" /></svg></div>
+      <p>Results appear here, hottest prospects first.</p></div></div>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "prospectscan",
+  "version": "1.0.0",
+  "description": "Audit small-business websites, score the sales opportunity, and draft personalized outreach emails.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Ahmad Murtaza",
+  "bin": {
+    "prospectscan": "dist/cli.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
+    "cli": "tsx src/cli.ts",
+    "demo": "tsx scripts/demo.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
+    "cheerio": "^1.0.0",
+    "commander": "^13.1.0",
+    "express": "^4.21.2",
+    "p-limit": "^6.2.0",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.15.17",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.1.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.3"
+  }
+}
